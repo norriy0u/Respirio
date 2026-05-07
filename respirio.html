@@ -19,20 +19,16 @@
 }
 html,body{height:100%;min-width:1200px;background:var(--navy);color:var(--text);font-family:'Rajdhani',sans-serif;overflow:hidden}
 
-/* STARS */
 #stars{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
 .star{position:absolute;border-radius:50%;background:#fff;animation:twinkle linear infinite}
 @keyframes twinkle{0%,100%{opacity:0.05}50%{opacity:0.32}}
 
-/* SCANLINE OVERLAY */
 #scanline{position:fixed;inset:0;pointer-events:none;z-index:1;
   background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,229,200,0.012) 2px,rgba(0,229,200,0.012) 4px)}
 
-/* ── APP SHELL ── */
 .app{position:relative;z-index:2;display:grid;height:100vh;
   grid-template-rows:var(--topnav-h) 1fr var(--statusbar-h);overflow:hidden}
 
-/* ── TOP NAV ── */
 .topnav{
   display:flex;align-items:center;justify-content:space-between;
   padding:0 32px;border-bottom:1px solid var(--border2);
@@ -76,10 +72,8 @@ html,body{height:100%;min-width:1200px;background:var(--navy);color:var(--text);
 .sim-knob{position:absolute;top:2.5px;left:2.5px;width:15px;height:15px;border-radius:50%;background:#fff;transition:transform 0.3s}
 .sim-tog:not(.off) .sim-knob{transform:translateX(16px)}
 
-/* ── MAIN 3-COL ── */
 .main{display:grid;grid-template-columns:380px 1fr 340px;overflow:hidden;height:100%}
 
-/* ── SIDEBARS ── */
 .sidebar-left{
   border-right:1px solid var(--border);padding:22px 20px;
   overflow-y:auto;display:flex;flex-direction:column;gap:16px;scrollbar-width:none;
@@ -91,18 +85,15 @@ html,body{height:100%;min-width:1200px;background:var(--navy);color:var(--text);
 }
 .sidebar-right::-webkit-scrollbar{display:none}
 
-/* ── CENTER ── */
 .center{padding:22px 24px;display:flex;flex-direction:column;gap:16px;overflow-y:auto;scrollbar-width:none}
 .center::-webkit-scrollbar{display:none}
 
-/* ── CARDS ── */
 .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;position:relative;overflow:hidden}
 .card.teal-border{border-color:var(--tealBorder)}
 .card.alert-mode{border-color:var(--alertBorder);animation:calarm 1s ease-in-out infinite}
 @keyframes calarm{0%,100%{box-shadow:none}50%{box-shadow:0 0 32px rgba(255,59,92,0.22)}}
 .card-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--text2);font-weight:700;margin-bottom:12px}
 
-/* ── BIG BPM ── */
 .bpm-hero{background:var(--card);border:1.5px solid var(--border2);border-radius:20px;padding:26px 24px;position:relative;overflow:hidden}
 .bpm-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,rgba(0,229,200,0.05) 0%,transparent 65%);pointer-events:none}
 .bpm-hero::after{content:'BPM';position:absolute;right:-14px;bottom:-24px;font-family:'Bebas Neue',sans-serif;font-size:148px;color:rgba(0,229,200,0.03);pointer-events:none;letter-spacing:4px;line-height:1}
@@ -124,10 +115,8 @@ html,body{height:100%;min-width:1200px;background:var(--navy);color:var(--text);
 .bpm-meta{font-size:11px;color:var(--text3);margin-top:12px;font-family:'Share Tech Mono',monospace;line-height:2;border-top:1px solid var(--border);padding-top:10px}
 .bpm-meta em{color:var(--teal);font-style:normal}
 
-/* ── WAVEFORM ── */
 #waveCanvas{display:block;width:100%;border-radius:8px}
 
-/* ── STAT GRID ── */
 .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .stat-box{background:var(--card2);border:1px solid var(--border);border-radius:14px;padding:14px 12px;text-align:center;position:relative;overflow:hidden}
 .stat-box::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,229,200,0.03) 0%,transparent 60%);pointer-events:none}
@@ -135,18 +124,15 @@ html,body{height:100%;min-width:1200px;background:var(--navy);color:var(--text);
 .stat-val.al{color:var(--alert)}
 .stat-lbl{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--text3);font-weight:700;margin-top:4px}
 
-/* ── SENSOR MINI STATS ── */
 .sensor-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .sbox{background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:12px;text-align:center}
 .sval{font-size:18px;font-weight:700;color:var(--teal);font-family:'Share Tech Mono',monospace}
 .slbl{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-top:4px}
 
-/* ── SIGNAL BARS ── */
 .sig-wrap{display:flex;align-items:center;gap:8px}
 .sbars{display:flex;align-items:flex-end;gap:3px;height:14px}
 .sbars span{width:5px;border-radius:2px;background:var(--teal);transition:opacity 0.3s}
 
-/* ── APNEA BANNER ── */
 .apnea-banner{
   display:none;align-items:center;gap:14px;
   background:var(--alertBg);border:1px solid var(--alertBorder);
@@ -158,7 +144,6 @@ html,body{height:100%;min-width:1200px;background:var(--navy);color:var(--text);
 .adismiss{margin-left:auto;flex-shrink:0;font-size:11px;color:var(--alert);cursor:pointer;font-weight:700;padding:6px 14px;border:1px solid var(--alertBorder);border-radius:8px;background:transparent;font-family:'Rajdhani',sans-serif;letter-spacing:1.5px;transition:all 0.2s}
 .adismiss:hover{background:var(--alertBg)}
 
-/* ── ALERT LOG ── */
 .log-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;border:1px solid var(--border);margin-bottom:7px}
 .log-item:last-child{margin-bottom:0}
 .log-item.crit{border-color:rgba(255,59,92,0.3);background:rgba(255,59,92,0.05)}
@@ -169,7 +154,6 @@ html,body{height:100%;min-width:1200px;background:var(--navy);color:var(--text);
 .ldur{font-size:12px;color:var(--text2);font-family:'Share Tech Mono',monospace;flex-shrink:0}
 .log-empty{font-size:11px;color:var(--text3);text-align:center;padding:24px 0;font-family:'Share Tech Mono',monospace}
 
-/* ── SESSION BTN ── */
 .session-btn{
   width:100%;padding:16px;border-radius:14px;border:1.5px solid var(--teal);
   cursor:pointer;font-family:'Bebas Neue',sans-serif;font-size:24px;
@@ -184,28 +168,33 @@ html,body{height:100%;min-width:1200px;background:var(--navy);color:var(--text);
 .rec-dot.live{background:var(--alert);animation:dot-rec 1s ease-in-out infinite}
 @keyframes dot-rec{0%,100%{opacity:1}50%{opacity:0.3}}
 
-/* ── TREND BARS ── */
 .trend-bars{display:flex;align-items:flex-end;gap:3px;height:54px;margin-top:10px}
 .tbar{flex:1;border-radius:3px 3px 0 0;background:var(--teal);opacity:0.35;transition:all 0.5s}
 .tbar.last{opacity:1}
 
-/* ── THRESHOLD ── */
 .thresh-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
 .tbtn{padding:5px 14px;border-radius:8px;border:1px solid var(--border2);background:transparent;cursor:pointer;font-size:12px;font-weight:700;color:var(--text2);font-family:'Rajdhani',sans-serif;letter-spacing:1px;transition:all 0.2s}
 .tbtn.active{background:var(--teal);border-color:var(--teal);color:var(--navy)}
 .tbtn:hover:not(.active){border-color:var(--teal);color:var(--teal)}
 
-/* ── CLEAR BTN ── */
 .clear-btn{font-size:10px;color:var(--text3);cursor:pointer;transition:color 0.2s;background:none;border:none;font-family:'Rajdhani',sans-serif;letter-spacing:1px;font-weight:700}
 .clear-btn:hover{color:var(--teal)}
 
-/* ── DEVICE INFO ── */
 .devinfo-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid var(--border)}
 .devinfo-row:last-child{border-bottom:none}
 .devinfo-key{font-size:10px;color:var(--text3);letter-spacing:1px;font-family:'Share Tech Mono',monospace}
 .devinfo-val{font-size:11px;color:var(--teal);font-family:'Share Tech Mono',monospace;font-weight:700}
 
-/* ── STATUS BAR ── */
+/* ── BLE ERROR TOAST ── */
+.ble-toast{
+  position:fixed;bottom:52px;left:50%;transform:translateX(-50%) translateY(10px);
+  background:var(--card2);border:1px solid var(--alertBorder);border-radius:12px;
+  padding:12px 20px;font-size:12px;color:var(--alert);font-family:'Share Tech Mono',monospace;
+  letter-spacing:0.5px;z-index:100;opacity:0;transition:all 0.3s;pointer-events:none;
+  max-width:500px;text-align:center;
+}
+.ble-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
 .statusbar{
   grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;
   padding:0 28px;border-top:1px solid var(--border);
@@ -223,6 +212,7 @@ html,body{height:100%;min-width:1200px;background:var(--navy);color:var(--text);
 <body>
 <div id="stars"></div>
 <div id="scanline"></div>
+<div class="ble-toast" id="bleToast"></div>
 
 <div class="app">
 
@@ -253,9 +243,12 @@ html,body{height:100%;min-width:1200px;background:var(--navy);color:var(--text);
         <span id="simLabel">Demo mode</span>
         <div class="sim-tog" id="simTog" onclick="toggleSim()"><div class="sim-knob"></div></div>
       </div>
-      <button class="ble-btn" id="bleBtn" onclick="handleBLE()">
+      <button class="ble-btn" id="bleBtn" onclick="handleBLE(false)">
         <div class="ble-dot" id="bleDot"></div>
         <span id="bleLabel">Connect ESP32</span>
+      </button>
+      <button class="ble-btn" id="bleScanAll" onclick="handleBLE(true)" title="Show ALL nearby BLE devices — use this if ESP32 doesn't appear in normal scan" style="font-size:10px;padding:8px 12px;opacity:0.65">
+        All&nbsp;Devices
       </button>
     </div>
   </nav>
@@ -263,10 +256,9 @@ html,body{height:100%;min-width:1200px;background:var(--navy);color:var(--text);
   <!-- MAIN 3-COL -->
   <div class="main">
 
-    <!-- ── LEFT SIDEBAR ── -->
+    <!-- LEFT SIDEBAR -->
     <aside class="sidebar-left">
 
-      <!-- BPM HERO -->
       <div class="bpm-hero" id="bpmCard">
         <div class="bpm-top">
           <div class="bpm-lbl">Breaths per minute</div>
@@ -280,7 +272,6 @@ html,body{height:100%;min-width:1200px;background:var(--navy);color:var(--text);
         </div>
       </div>
 
-      <!-- STATS -->
       <div class="stat-grid">
         <div class="stat-box">
           <div class="stat-val" id="stApnea">0</div>
@@ -300,7 +291,6 @@ html,body{height:100%;min-width:1200px;background:var(--navy);color:var(--text);
         </div>
       </div>
 
-      <!-- SENSOR INFO -->
       <div class="card teal-border">
         <div class="card-label">Sensor readings</div>
         <div class="sensor-grid">
@@ -311,7 +301,6 @@ html,body{height:100%;min-width:1200px;background:var(--navy);color:var(--text);
         </div>
       </div>
 
-      <!-- SESSION CONTROL -->
       <button class="session-btn" id="sessBtn" onclick="toggleSession()">▶ START SESSION</button>
       <div class="session-meta">
         <div style="display:flex;align-items:center;gap:9px">
@@ -323,10 +312,9 @@ html,body{height:100%;min-width:1200px;background:var(--navy);color:var(--text);
 
     </aside>
 
-    <!-- ── CENTER ── -->
+    <!-- CENTER -->
     <main class="center">
 
-      <!-- APNEA BANNER -->
       <div class="apnea-banner" id="apneaBanner">
         <div style="font-size:24px;flex-shrink:0">🚨</div>
         <div>
@@ -336,7 +324,6 @@ html,body{height:100%;min-width:1200px;background:var(--navy);color:var(--text);
         <button class="adismiss" onclick="dismissApnea()">DISMISS</button>
       </div>
 
-      <!-- WAVEFORM -->
       <div class="card teal-border" style="flex:2;min-height:260px">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
           <div>
@@ -356,12 +343,9 @@ html,body{height:100%;min-width:1200px;background:var(--navy);color:var(--text);
         <canvas id="waveCanvas" height="220"></canvas>
       </div>
 
-      <!-- BPM TREND -->
       <div class="card" style="flex:1">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
-          <div>
-            <div class="card-label" style="margin:0">BPM trend (last 60s)</div>
-          </div>
+          <div><div class="card-label" style="margin:0">BPM trend (last 60s)</div></div>
           <span style="font-size:10px;color:var(--text3);font-family:'Share Tech Mono',monospace" id="trendRange">0–25 BPM</span>
         </div>
         <div class="trend-bars" id="trendBars"></div>
@@ -372,10 +356,9 @@ html,body{height:100%;min-width:1200px;background:var(--navy);color:var(--text);
 
     </main>
 
-    <!-- ── RIGHT SIDEBAR ── -->
+    <!-- RIGHT SIDEBAR -->
     <aside class="sidebar-right">
 
-      <!-- ALERT THRESHOLD -->
       <div class="card">
         <div class="card-label">Apnea alert threshold</div>
         <div class="thresh-row" id="threshRow">
@@ -390,7 +373,6 @@ html,body{height:100%;min-width:1200px;background:var(--navy);color:var(--text);
         </div>
       </div>
 
-      <!-- ALERT LOG -->
       <div class="card" style="flex:1">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
           <div class="card-label" style="margin:0">Alert log</div>
@@ -401,7 +383,6 @@ html,body{height:100%;min-width:1200px;background:var(--navy);color:var(--text);
         </div>
       </div>
 
-      <!-- DEVICE INFO -->
       <div class="card">
         <div class="card-label">Device info</div>
         <div style="display:flex;flex-direction:column;gap:0">
@@ -466,345 +447,535 @@ const CTRL_UUID = '0000fff2-0000-1000-8000-00805f9b34fb';
 const CMD_BUZZ_ALERT = 0x02, CMD_BUZZ_OFF = 0x03;
 
 // ── STATE ──────────────────────────────────────────────────────────
-let bleDevice=null, ctrlChar=null;
-let connected=false, simMode=true, running=false;
-let simIv=null, sessIv=null;
-let waveBuf=[], bpmHist=[], trendBuf=[];
-let apneaCnt=0, sessStart=null;
-let apneaMs=null, activeApnea=false, simT=0, lastTick=0;
-let threshold=10, peakBpm=0;
-const WAVE_LEN=220, CANVAS_H=220, APNEA_S=10;
+let bleDevice = null, ctrlChar = null, dataChar = null;
+let connected = false, simMode = true, running = false;
+let simIv = null, sessionTimer = null;
+let waveBuf = [], bpmHist = [], trendBuf = [];
+let apneaCnt = 0, sessStart = null;
+let apneaMs = null, activeApnea = false, simT = 0, lastTick = 0;
+let threshold = 10, peakBpm = 0;
+let sessionRunning = false, sessionSecs = 0;
+const WAVE_LEN = 220, CANVAS_H = 220;
 
 // ── CANVAS ─────────────────────────────────────────────────────────
-const canvas=document.getElementById('waveCanvas');
-const ctx=canvas.getContext('2d');
-function resizeCanvas(){ canvas.width=canvas.offsetWidth; }
-resizeCanvas(); window.addEventListener('resize',()=>{ resizeCanvas(); drawWave(); });
+const canvas = document.getElementById('waveCanvas');
+const ctx = canvas.getContext('2d');
+function resizeCanvas() { canvas.width = canvas.offsetWidth; }
+resizeCanvas();
+window.addEventListener('resize', () => { resizeCanvas(); drawWave(); });
 
 // ── STARS ──────────────────────────────────────────────────────────
-const sg=document.getElementById('stars');
-for(let i=0;i<100;i++){
-  const s=document.createElement('div'); s.className='star';
-  const z=Math.random()*1.8+0.4;
-  s.style.cssText=`width:${z}px;height:${z}px;left:${Math.random()*100}%;top:${Math.random()*100}%;animation-duration:${3+Math.random()*6}s;animation-delay:${-Math.random()*9}s`;
+const sg = document.getElementById('stars');
+for (let i = 0; i < 100; i++) {
+  const s = document.createElement('div'); s.className = 'star';
+  const z = Math.random() * 1.8 + 0.4;
+  s.style.cssText = `width:${z}px;height:${z}px;left:${Math.random()*100}%;top:${Math.random()*100}%;animation-duration:${3+Math.random()*6}s;animation-delay:${-Math.random()*9}s`;
   sg.appendChild(s);
 }
 
 // ── CLOCK ──────────────────────────────────────────────────────────
-function updateClock(){
-  const now=new Date();
-  document.getElementById('sbClock').textContent=now.toLocaleTimeString();
-}
-updateClock(); setInterval(updateClock,1000);
+function updateClock() { document.getElementById('sbClock').textContent = new Date().toLocaleTimeString(); }
+updateClock(); setInterval(updateClock, 1000);
 
-// ── SIM TOGGLE ────────────────────────────────────────────────────
-function toggleSim(){
-  simMode=!simMode;
-  const tog=document.getElementById('simTog');
-  tog.classList.toggle('off',!simMode);
-  document.getElementById('simLabel').textContent=simMode?'Demo mode':'Live mode';
-  document.getElementById('sbMode').textContent=simMode?'Demo':'Live';
-  if(!simMode){ if(simIv){clearInterval(simIv);simIv=null;} running=false; resetDisplay(); }
+// ── TOAST ──────────────────────────────────────────────────────────
+let toastTimer = null;
+function showToast(msg, isError = true) {
+  const t = document.getElementById('bleToast');
+  t.textContent = msg;
+  t.style.borderColor = isError ? 'var(--alertBorder)' : 'var(--tealBorder)';
+  t.style.color = isError ? 'var(--alert)' : 'var(--teal)';
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 4000);
 }
 
-// ── WEB BLUETOOTH ─────────────────────────────────────────────────
-async function handleBLE(){
-  if(simMode){ alert('Turn off demo mode first.'); return; }
-  if(connected){ disconnectBLE(); return; }
-  if(!navigator.bluetooth){ alert('Use Chrome or Edge on desktop.'); return; }
+// ── SIM TOGGLE ─────────────────────────────────────────────────────
+function toggleSim() {
+  if (connected) { showToast('Disconnect BLE first before switching to demo mode.'); return; }
+  simMode = !simMode;
+  const tog = document.getElementById('simTog');
+  tog.classList.toggle('off', !simMode);
+  document.getElementById('simLabel').textContent = simMode ? 'Demo mode' : 'Live mode';
+  document.getElementById('sbMode').textContent = simMode ? 'Demo' : 'Live';
+  if (!simMode) {
+    if (simIv) { clearInterval(simIv); simIv = null; }
+    if (sessionRunning) stopSession();
+    resetDisplay();
+  }
+}
+
+// ── WEB BLUETOOTH ──────────────────────────────────────────────────
+async function handleBLE(scanAll = false) {
+  // FIX 1: Must be HTTPS or localhost
+  const okOrigin = location.protocol === 'https:'
+    || location.protocol === 'file:'
+    || location.hostname === 'localhost'
+    || location.hostname === '127.0.0.1';
+  if (!okOrigin) {
+    showToast('⚠ Web Bluetooth requires HTTPS, localhost, or a local file. Serve over HTTPS or open as a local HTML file.');
+    return;
+  }
+
+  // FIX 2: Browser check
+  if (!navigator.bluetooth) {
+    showToast('⚠ Web Bluetooth not supported. Use Chrome or Edge on desktop (not Firefox/Safari).');
+    return;
+  }
+
+  // Disconnect if already connected
+  if (connected) {
+    disconnectBLE();
+    return;
+  }
+
+  if (simMode) {
+    showToast('Turn off Demo mode first, then try connecting.');
+    return;
+  }
+
   setBleUI('scanning');
+  addLog('inf', scanAll ? 'Scanning ALL BLE devices nearby…' : 'Scanning for RESPIRIO device…', null);
+  if (scanAll) showToast('Showing ALL nearby BLE devices — pick your ESP32 from the list', false);
+
   try {
-    bleDevice=await navigator.bluetooth.requestDevice({
-      filters:[{namePrefix:'RESPIRIO'}], optionalServices:[SVC_UUID]
-    });
-    bleDevice.addEventListener('gattserverdisconnected',onDisconnected);
+    const requestOptions = scanAll
+      ? { acceptAllDevices: true, optionalServices: [SVC_UUID] }
+      : {
+          filters: [
+            { name: 'RESPIRIO' },
+            { namePrefix: 'RESPIRIO' },
+            { services: [SVC_UUID] }
+          ],
+          optionalServices: [SVC_UUID]
+        };
+
+    bleDevice = await navigator.bluetooth.requestDevice(requestOptions);
+
+    bleDevice.addEventListener('gattserverdisconnected', onDisconnected);
     setBleUI('connecting');
-    const server=await bleDevice.gatt.connect();
-    const service=await server.getPrimaryService(SVC_UUID);
-    const dataChar=await service.getCharacteristic(DATA_UUID);
-    await dataChar.startNotifications();
-    dataChar.addEventListener('characteristicvaluechanged',onPacket);
-    try{ ctrlChar=await service.getCharacteristic(CTRL_UUID); }catch(_){}
-    connected=true;
-    setBleUI('connected',bleDevice.name||'RESPIRIO');
-    updateStatusBar(true,bleDevice.name||'RESPIRIO');
-    const devName=bleDevice.name||'RESPIRIO';
-    const dn=document.getElementById('devName');
-    dn.querySelector('.devinfo-val').textContent=devName;
-    dn.querySelector('.devinfo-val').style.color='var(--teal)';
-    startSession(false);
-  } catch(err){
-    if(err.name!=='NotFoundError'&&err.name!=='NotAllowedError') setBleUI('err');
-    else setBleUI('idle');
+    addLog('inf', `Found: ${bleDevice.name || 'RESPIRIO'} · connecting GATT…`, null);
+
+    // FIX 4: Wrap each step individually so we know exactly where it fails
+    let server;
+    try {
+      server = await bleDevice.gatt.connect();
+    } catch (e) {
+      throw new Error(`GATT connect failed: ${e.message}`);
+    }
+
+    let service;
+    try {
+      service = await server.getPrimaryService(SVC_UUID);
+    } catch (e) {
+      throw new Error(`Service 0xFFF0 not found on device. Check ESP32 firmware UUID. (${e.message})`);
+    }
+
+    try {
+      dataChar = await service.getCharacteristic(DATA_UUID);
+      await dataChar.startNotifications();
+      dataChar.addEventListener('characteristicvaluechanged', onPacket);
+    } catch (e) {
+      throw new Error(`Data characteristic 0xFFF1 failed: ${e.message}`);
+    }
+
+    // Control char is optional — don't fail if absent
+    try {
+      ctrlChar = await service.getCharacteristic(CTRL_UUID);
+    } catch (_) {
+      ctrlChar = null;
+      console.warn('RESPIRIO: control characteristic 0xFFF2 not found (buzzer disabled)');
+    }
+
+    connected = true;
+    const devName = bleDevice.name || 'RESPIRIO';
+    setBleUI('connected', devName);
+    updateStatusBar(true, devName);
+
+    const dn = document.getElementById('devName');
+    dn.querySelector('.devinfo-val').textContent = devName;
+    dn.querySelector('.devinfo-val').style.color = 'var(--teal)';
+
+    addLog('inf', `Connected: ${devName}`, null);
+    showToast(`Connected to ${devName}`, false);
+
+    // FIX 5: Start session properly (updates UI, starts timer, etc.)
+    startSessionFromBLE();
+
+  } catch (err) {
+    console.error('BLE error:', err);
+    // NotFoundError / NotAllowedError = user cancelled — don't show scary message
+    if (err.name === 'NotFoundError' || err.name === 'NotAllowedError') {
+      setBleUI('idle');
+      addLog('inf', 'Device scan cancelled by user', null);
+    } else {
+      setBleUI('idle');
+      showToast(`BLE Error: ${err.message}`);
+      addLog('inf', `Connection failed: ${err.message}`, null);
+    }
   }
 }
 
-function onPacket(e){
-  const d=e.target.value;
-  try {
-    processReading({
-      amplitude:d.getUint8(0), bpm:d.getUint16(1,true)/10,
-      isApnea:!!(d.getUint8(3)&0x01), lowSignal:!!(d.getUint8(3)&0x02),
-      signalQuality:d.getUint8(4), snr:d.getUint8(5)
-    });
-  } catch(_){}
-}
+// FIX 5 (continued): Separate function for BLE-triggered session start
+// This properly updates all the UI elements that toggleSession() normally handles
+function startSessionFromBLE() {
+  if (sessionRunning) return; // already running
 
-async function writeBuzzer(cmd){
-  if(!ctrlChar) return;
-  try{ await ctrlChar.writeValue(new Uint8Array([cmd])); }catch(_){}
-}
+  sessionRunning = true;
+  sessionSecs = 0;
+  running = true;
+  sessStart = Date.now();
+  waveBuf = []; bpmHist = []; trendBuf = []; peakBpm = 0;
 
-function onDisconnected(){
-  connected=false; setBleUI('idle'); updateStatusBar(false,'');
-  addLog('inf','Device disconnected',null);
-  if(bleDevice?.gatt){
-    setTimeout(async()=>{
-      try{
-        setBleUI('connecting');
-        const s=await bleDevice.gatt.connect();
-        const svc=await s.getPrimaryService(SVC_UUID);
-        const ch=await svc.getCharacteristic(DATA_UUID);
-        await ch.startNotifications();
-        ch.addEventListener('characteristicvaluechanged',onPacket);
-        connected=true; setBleUI('connected',bleDevice.name||'RESPIRIO');
-        updateStatusBar(true,bleDevice.name||'RESPIRIO');
-      }catch(_){ setBleUI('idle'); }
-    },2000);
-  }
-}
+  const btn = document.getElementById('sessBtn');
+  const dot = document.getElementById('recDot');
+  const status = document.getElementById('sessStatus');
+  const timer = document.getElementById('sessTimer');
 
-function disconnectBLE(){
-  bleDevice?.gatt?.disconnect(); connected=false; setBleUI('idle'); updateStatusBar(false,'');
-}
+  btn.textContent = '■ STOP SESSION';
+  btn.classList.add('recording');
+  dot.classList.add('live');
+  status.textContent = 'Live BLE session…';
+  status.style.color = 'var(--alert)';
+  timer.textContent = '00:00';
 
-function updateStatusBar(isConn,name){
-  const dot=document.getElementById('sbConnDot');
-  const lbl=document.getElementById('sbConnStatus');
-  if(isConn){ dot.className='sb-dot green'; lbl.innerHTML=`Connected · <em style="color:var(--teal)">${name}</em>`; }
-  else { dot.className='sb-dot grey'; lbl.textContent='No device connected'; }
-}
+  addLog('inf', 'BLE session started', null);
 
-// ── SESSION ───────────────────────────────────────────────────────
-function startSession(isSim){
-  running=true; sessStart=Date.now();
-  waveBuf=[]; bpmHist=[]; trendBuf=[]; peakBpm=0;
-  if(sessIv) clearInterval(sessIv);
-  sessIv=setInterval(()=>{
-    if(!sessionRunning) return;
-    const e=Date.now()-sessStart;
-    const s=Math.floor(e/1000)%60,m=Math.floor(e/60000)%60,h=Math.floor(e/3600000);
-    document.getElementById('stTime').textContent=h>0?`${pad(h)}:${pad(m)}:${pad(s)}`:`${pad(m)}:${pad(s)}`;
-    if(bpmHist.length>0){
-      const last=bpmHist[bpmHist.length-1]||0;
-      trendBuf.push(Math.round(last));
-      if(trendBuf.length>50) trendBuf.shift();
+  clearInterval(sessionTimer);
+  sessionTimer = setInterval(() => {
+    sessionSecs++;
+    const m = Math.floor(sessionSecs / 60), s = sessionSecs % 60;
+    timer.textContent = pad(m) + ':' + pad(s);
+    // trend update
+    if (bpmHist.length > 0) {
+      trendBuf.push(Math.round(bpmHist[bpmHist.length - 1]));
+      if (trendBuf.length > 50) trendBuf.shift();
       drawTrend();
     }
-  },1000);
+  }, 1000);
 }
 
-// ── SIMULATOR ─────────────────────────────────────────────────────
-function startSim(){
-  if(simIv) clearInterval(simIv);
-  simIv=setInterval(()=>{
-    simT+=0.085;
-    const cp=simT%22, inApnea=cp>18&&cp<21;
-    const bpm=inApnea?0:Math.max(8,15+Math.sin(simT*0.22)*3.5+(Math.random()-0.5)*1.2);
-    const amp=inApnea?Math.round(2+Math.random()*3):Math.round(50+Math.sin(simT)*38+(Math.random()-0.5)*5);
-    const snr=inApnea?Math.round(4+Math.random()*4):Math.round(22+Math.random()*8);
-    const sig=inApnea?Math.round(30+Math.random()*18):Math.round(88+Math.random()*10);
-    processReading({ amplitude:Math.max(0,Math.min(100,amp)), bpm:parseFloat(bpm.toFixed(1)),
-      isApnea:inApnea, lowSignal:sig<50, signalQuality:sig, snr });
-  },50);
+// FIX 6: Proper packet parsing with length guard
+function onPacket(e) {
+  const d = e.target.value;
+  // Minimum 6 bytes: amplitude(1) + bpm(2) + flags(1) + quality(1) + snr(1)
+  if (d.byteLength < 6) {
+    console.warn('RESPIRIO: short packet', d.byteLength, 'bytes — expected ≥6');
+    return;
+  }
+  try {
+    processReading({
+      amplitude:     d.getUint8(0),
+      bpm:           d.getUint16(1, true) / 10,   // little-endian, 1 decimal
+      isApnea:       !!(d.getUint8(3) & 0x01),
+      lowSignal:     !!(d.getUint8(3) & 0x02),
+      signalQuality: d.getUint8(4),
+      snr:           d.getUint8(5)
+    });
+  } catch (err) {
+    console.error('RESPIRIO: packet parse error', err);
+  }
 }
 
-// ── CORE PROCESSOR ────────────────────────────────────────────────
-function processReading({amplitude,bpm,isApnea,lowSignal,signalQuality,snr}){
+async function writeBuzzer(cmd) {
+  if (!ctrlChar) return;
+  try { await ctrlChar.writeValue(new Uint8Array([cmd])); } catch (_) {}
+}
+
+// FIX 7: Reconnect logic cleaned up — single attempt, no runaway retries
+async function onDisconnected() {
+  connected = false;
+  ctrlChar = null;
+  setBleUI('idle');
+  updateStatusBar(false, '');
+  addLog('inf', 'Device disconnected', null);
+
+  // Attempt one auto-reconnect after 2s
+  if (bleDevice && bleDevice.gatt) {
+    setTimeout(async () => {
+      if (connected) return; // already reconnected somehow
+      try {
+        setBleUI('connecting');
+        const server   = await bleDevice.gatt.connect();
+        const service  = await server.getPrimaryService(SVC_UUID);
+        dataChar       = await service.getCharacteristic(DATA_UUID);
+        await dataChar.startNotifications();
+        dataChar.addEventListener('characteristicvaluechanged', onPacket);
+        try { ctrlChar = await service.getCharacteristic(CTRL_UUID); } catch (_) { ctrlChar = null; }
+        connected = true;
+        setBleUI('connected', bleDevice.name || 'RESPIRIO');
+        updateStatusBar(true, bleDevice.name || 'RESPIRIO');
+        addLog('inf', 'Auto-reconnected', null);
+        showToast('Reconnected to device', false);
+      } catch (err) {
+        setBleUI('idle');
+        addLog('inf', 'Auto-reconnect failed — tap Connect to retry', null);
+      }
+    }, 2000);
+  }
+}
+
+function disconnectBLE() {
+  if (bleDevice?.gatt) bleDevice.gatt.disconnect();
+  connected = false;
+  ctrlChar = null;
+  dataChar = null;
+  setBleUI('idle');
+  updateStatusBar(false, '');
+  addLog('inf', 'Disconnected by user', null);
+  stopSession();
+}
+
+function updateStatusBar(isConn, name) {
+  const dot = document.getElementById('sbConnDot');
+  const lbl = document.getElementById('sbConnStatus');
+  if (isConn) {
+    dot.className = 'sb-dot green';
+    lbl.innerHTML = `Connected · <em style="color:var(--teal)">${name}</em>`;
+  } else {
+    dot.className = 'sb-dot grey';
+    lbl.textContent = 'No device connected';
+  }
+}
+
+// ── SIMULATOR ──────────────────────────────────────────────────────
+function startSim() {
+  if (simIv) clearInterval(simIv);
+  simIv = setInterval(() => {
+    simT += 0.085;
+    const cp = simT % 22, inApnea = cp > 18 && cp < 21;
+    const bpm = inApnea ? 0 : Math.max(8, 15 + Math.sin(simT * 0.22) * 3.5 + (Math.random() - 0.5) * 1.2);
+    const amp = inApnea ? Math.round(2 + Math.random() * 3) : Math.round(50 + Math.sin(simT) * 38 + (Math.random() - 0.5) * 5);
+    const snr = inApnea ? Math.round(4 + Math.random() * 4) : Math.round(22 + Math.random() * 8);
+    const sig = inApnea ? Math.round(30 + Math.random() * 18) : Math.round(88 + Math.random() * 10);
+    processReading({
+      amplitude: Math.max(0, Math.min(100, amp)),
+      bpm: parseFloat(bpm.toFixed(1)),
+      isApnea: inApnea, lowSignal: sig < 50,
+      signalQuality: sig, snr
+    });
+  }, 50);
+}
+
+// ── CORE PROCESSOR ─────────────────────────────────────────────────
+function processReading({ amplitude, bpm, isApnea, lowSignal, signalQuality, snr }) {
   waveBuf.push(amplitude);
-  if(waveBuf.length>WAVE_LEN) waveBuf.shift();
+  if (waveBuf.length > WAVE_LEN) waveBuf.shift();
 
-  const now=Date.now();
-  if(now-lastTick>180){
-    lastTick=now;
-    const disp=(isApnea||bpm<1)?'- -':Math.round(bpm);
-    document.getElementById('bpmNum').textContent=disp;
-    if(bpm>1){
+  const now = Date.now();
+  if (now - lastTick > 180) {
+    lastTick = now;
+    const disp = (isApnea || bpm < 1) ? '- -' : Math.round(bpm);
+    document.getElementById('bpmNum').textContent = disp;
+    if (bpm > 1) {
       bpmHist.push(bpm);
-      const avg=Math.round(bpmHist.reduce((a,b)=>a+b)/bpmHist.length);
-      document.getElementById('stAvg').textContent=avg;
-      if(bpm>peakBpm){ peakBpm=Math.round(bpm); document.getElementById('stPeak').textContent=peakBpm; }
+      const avg = Math.round(bpmHist.reduce((a, b) => a + b) / bpmHist.length);
+      document.getElementById('stAvg').textContent = avg;
+      if (bpm > peakBpm) { peakBpm = Math.round(bpm); document.getElementById('stPeak').textContent = peakBpm; }
     }
-    updateStatus(bpm,isApnea);
-    document.getElementById('svFreq').textContent=bpm>0?(bpm/60).toFixed(2):'--';
-    document.getElementById('svAmp').textContent=amplitude+'%';
-    document.getElementById('svSnr').textContent=snr+'dB';
+    updateStatus(bpm, isApnea);
+    document.getElementById('svFreq').textContent = bpm > 0 ? (bpm / 60).toFixed(2) : '--';
+    document.getElementById('svAmp').textContent = amplitude + '%';
+    document.getElementById('svSnr').textContent = snr + 'dB';
     updateSigBars(signalQuality);
-    const sp=document.getElementById('sigPct');
-    sp.textContent=signalQuality+'%'; sp.style.opacity='1';
-    const src=simMode?'Demo (simulated)':(bleDevice?.name||'RESPIRIO');
-    document.getElementById('bpmMeta').innerHTML=
+    const sp = document.getElementById('sigPct');
+    sp.textContent = signalQuality + '%'; sp.style.opacity = '1';
+    const src = simMode ? 'Demo (simulated)' : (bleDevice?.name || 'RESPIRIO');
+    document.getElementById('bpmMeta').innerHTML =
       `Sensor: <em>HLK-LD2410C 24GHz</em> · Filter: <em>0.1–0.5Hz DSP</em><br>Source: <em>${src}</em> · Signal: <em>${signalQuality}%</em> · SNR: <em>${snr}dB</em>`;
   }
 
-  // Apnea
-  if(isApnea||bpm<1){
-    if(!apneaMs) apneaMs=Date.now();
-    const durS=(Date.now()-apneaMs)/1000;
-    document.getElementById('apneaSub').textContent=`Breathing paused · ${durS.toFixed(0)}s · mmWave signal flat`;
-    if(durS>=threshold&&!activeApnea){
-      activeApnea=true; apneaCnt++;
-      document.getElementById('stApnea').textContent=apneaCnt;
+  // Apnea detection
+  if (isApnea || bpm < 1) {
+    if (!apneaMs) apneaMs = Date.now();
+    const durS = (Date.now() - apneaMs) / 1000;
+    document.getElementById('apneaSub').textContent = `Breathing paused · ${durS.toFixed(0)}s · mmWave signal flat`;
+    if (durS >= threshold && !activeApnea) {
+      activeApnea = true; apneaCnt++;
+      document.getElementById('stApnea').textContent = apneaCnt;
       document.getElementById('stApnea').classList.add('al');
       document.getElementById('apneaBanner').classList.add('show');
-      addLog('apnea',`Apnea · ${durS.toFixed(1)}s pause`,Math.round(durS));
+      addLog('apnea', `Apnea · ${durS.toFixed(1)}s pause`, Math.round(durS));
       writeBuzzer(CMD_BUZZ_ALERT);
-      if(Notification.permission==='granted'){
-        new Notification('RESPIRIO — Apnea Alert',{body:`Breathing pause of ${durS.toFixed(0)}s detected.`});
-      } else if(Notification.permission!=='denied') Notification.requestPermission();
+      if (Notification.permission === 'granted') {
+        new Notification('RESPIRIO — Apnea Alert', { body: `Breathing pause of ${durS.toFixed(0)}s detected.` });
+      } else if (Notification.permission !== 'denied') {
+        Notification.requestPermission();
+      }
     }
   } else {
-    apneaMs=null;
-    if(activeApnea){ activeApnea=false; document.getElementById('bpmCard').classList.remove('alert-mode'); writeBuzzer(CMD_BUZZ_OFF); }
+    apneaMs = null;
+    if (activeApnea) {
+      activeApnea = false;
+      document.getElementById('bpmCard').classList.remove('alert-mode');
+      writeBuzzer(CMD_BUZZ_OFF);
+    }
   }
   drawWave();
 }
 
-// ── STATUS ────────────────────────────────────────────────────────
-function updateStatus(bpm,isApnea){
-  const pill=document.getElementById('spill'), lbl=document.getElementById('spillLbl');
-  const num=document.getElementById('bpmNum'), card=document.getElementById('bpmCard');
-  pill.className='spill'; num.className='bpm-num'; card.className='bpm-hero';
-  if(isApnea||bpm<1){ pill.classList.add('apnea'); lbl.textContent='APNEA'; num.classList.add('apnea'); card.classList.add('alert-mode'); }
-  else if(bpm<10){    pill.classList.add('slow');  lbl.textContent='Bradypnea'; num.classList.add('slow'); }
-  else if(bpm>22){    pill.classList.add('fast');  lbl.textContent='Tachypnea'; num.classList.add('fast'); }
-  else {              pill.classList.add('ok');    lbl.textContent='Normal'; }
+// ── STATUS ─────────────────────────────────────────────────────────
+function updateStatus(bpm, isApnea) {
+  const pill = document.getElementById('spill'), lbl = document.getElementById('spillLbl');
+  const num = document.getElementById('bpmNum'), card = document.getElementById('bpmCard');
+  pill.className = 'spill'; num.className = 'bpm-num'; card.className = 'bpm-hero';
+  if      (isApnea || bpm < 1) { pill.classList.add('apnea'); lbl.textContent = 'APNEA';      num.classList.add('apnea'); card.classList.add('alert-mode'); }
+  else if (bpm < 10)           { pill.classList.add('slow');  lbl.textContent = 'Bradypnea';  num.classList.add('slow'); }
+  else if (bpm > 22)           { pill.classList.add('fast');  lbl.textContent = 'Tachypnea';  num.classList.add('fast'); }
+  else                         { pill.classList.add('ok');    lbl.textContent = 'Normal'; }
 }
 
-// ── WAVEFORM ──────────────────────────────────────────────────────
-function drawWave(){
-  const W=canvas.width, H=CANVAS_H;
-  ctx.clearRect(0,0,W,H);
-  if(waveBuf.length<2) return;
-  const pts=waveBuf.map((v,i)=>({ x:i*(W/(WAVE_LEN-1)), y:H-(v/100)*H*0.84-H*0.06 }));
-  ctx.strokeStyle='rgba(77,244,255,0.04)'; ctx.lineWidth=0.5;
-  [0.25,0.5,0.75].forEach(f=>{ ctx.beginPath();ctx.moveTo(0,H*f);ctx.lineTo(W,H*f);ctx.stroke(); });
-  ctx.fillStyle='rgba(121,134,203,0.3)'; ctx.font='9px Share Tech Mono';
-  ctx.fillText('100%',4,14); ctx.fillText('50%',4,H/2+4); ctx.fillText('0%',4,H-3);
-  const buildPath=()=>{ ctx.beginPath(); pts.forEach((p,i)=>i===0?ctx.moveTo(p.x,p.y):ctx.lineTo(p.x,p.y)); };
-  const lc=activeApnea?'#ff3b5c':'#00e5c8', gc=activeApnea?'rgba(255,59,92,0.15)':'rgba(0,229,200,0.14)';
-  buildPath(); ctx.strokeStyle=gc; ctx.lineWidth=8; ctx.lineJoin='round'; ctx.lineCap='round'; ctx.stroke();
-  buildPath(); ctx.strokeStyle=lc; ctx.lineWidth=2.5; ctx.lineJoin='round'; ctx.lineCap='round'; ctx.stroke();
-  const lp=pts[pts.length-1];
-  ctx.beginPath(); ctx.arc(lp.x,lp.y,9,0,Math.PI*2); ctx.fillStyle=gc; ctx.fill();
-  ctx.beginPath(); ctx.arc(lp.x,lp.y,3.5,0,Math.PI*2); ctx.fillStyle=lc; ctx.fill();
+// ── WAVEFORM ───────────────────────────────────────────────────────
+function drawWave() {
+  const W = canvas.width, H = CANVAS_H;
+  ctx.clearRect(0, 0, W, H);
+  if (waveBuf.length < 2) return;
+  const pts = waveBuf.map((v, i) => ({ x: i * (W / (WAVE_LEN - 1)), y: H - (v / 100) * H * 0.84 - H * 0.06 }));
+  ctx.strokeStyle = 'rgba(77,244,255,0.04)'; ctx.lineWidth = 0.5;
+  [0.25, 0.5, 0.75].forEach(f => { ctx.beginPath(); ctx.moveTo(0, H * f); ctx.lineTo(W, H * f); ctx.stroke(); });
+  ctx.fillStyle = 'rgba(121,134,203,0.3)'; ctx.font = '9px Share Tech Mono';
+  ctx.fillText('100%', 4, 14); ctx.fillText('50%', 4, H / 2 + 4); ctx.fillText('0%', 4, H - 3);
+  const buildPath = () => { ctx.beginPath(); pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)); };
+  const lc = activeApnea ? '#ff3b5c' : '#00e5c8', gc = activeApnea ? 'rgba(255,59,92,0.15)' : 'rgba(0,229,200,0.14)';
+  buildPath(); ctx.strokeStyle = gc; ctx.lineWidth = 8; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.stroke();
+  buildPath(); ctx.strokeStyle = lc; ctx.lineWidth = 2.5; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.stroke();
+  const lp = pts[pts.length - 1];
+  ctx.beginPath(); ctx.arc(lp.x, lp.y, 9, 0, Math.PI * 2); ctx.fillStyle = gc; ctx.fill();
+  ctx.beginPath(); ctx.arc(lp.x, lp.y, 3.5, 0, Math.PI * 2); ctx.fillStyle = lc; ctx.fill();
 }
 
-(function idleLoop(){
-  if(running) return;
-  const W=canvas.width, H=CANVAS_H;
-  ctx.clearRect(0,0,W,H);
-  ctx.strokeStyle='rgba(77,244,255,0.09)'; ctx.lineWidth=1;
-  ctx.setLineDash([6,6]); ctx.beginPath(); ctx.moveTo(0,H/2); ctx.lineTo(W,H/2); ctx.stroke();
+(function idleLoop() {
+  if (running) return;
+  const W = canvas.width, H = CANVAS_H;
+  ctx.clearRect(0, 0, W, H);
+  ctx.strokeStyle = 'rgba(77,244,255,0.09)'; ctx.lineWidth = 1;
+  ctx.setLineDash([6, 6]); ctx.beginPath(); ctx.moveTo(0, H / 2); ctx.lineTo(W, H / 2); ctx.stroke();
   ctx.setLineDash([]);
   requestAnimationFrame(idleLoop);
 })();
 
-// ── TREND ─────────────────────────────────────────────────────────
-function drawTrend(){
-  const el=document.getElementById('trendBars');
-  el.innerHTML='';
-  const max=Math.max(...trendBuf,1);
-  trendBuf.forEach((v,i)=>{
-    const b=document.createElement('div'); b.className='tbar'+(i===trendBuf.length-1?' last':'');
-    b.style.height=Math.max(4,(v/max)*100)+'%';
+// ── TREND ──────────────────────────────────────────────────────────
+function drawTrend() {
+  const el = document.getElementById('trendBars');
+  el.innerHTML = '';
+  const max = Math.max(...trendBuf, 1);
+  trendBuf.forEach((v, i) => {
+    const b = document.createElement('div');
+    b.className = 'tbar' + (i === trendBuf.length - 1 ? ' last' : '');
+    b.style.height = Math.max(4, (v / max) * 100) + '%';
     el.appendChild(b);
   });
 }
 
-// ── SIGNAL BARS ───────────────────────────────────────────────────
-function updateSigBars(q){
-  const n=q>85?4:q>65?3:q>40?2:1;
-  document.querySelectorAll('#sbars span').forEach((b,i)=>b.style.opacity=i<n?'1':'0.15');
+// ── SIGNAL BARS ────────────────────────────────────────────────────
+function updateSigBars(q) {
+  const n = q > 85 ? 4 : q > 65 ? 3 : q > 40 ? 2 : 1;
+  document.querySelectorAll('#sbars span').forEach((b, i) => b.style.opacity = i < n ? '1' : '0.15');
 }
 
-// ── BLE UI ────────────────────────────────────────────────────────
-function setBleUI(state,name=''){
-  const btn=document.getElementById('bleBtn'), dot=document.getElementById('bleDot'), lbl=document.getElementById('bleLabel');
-  btn.className='ble-btn'; dot.className='ble-dot';
-  if(state==='scanning')  { btn.classList.add('scanning');  lbl.textContent='Scanning...'; }
-  if(state==='connecting'){ btn.classList.add('scanning');  lbl.textContent='Connecting...'; }
-  if(state==='connected') { btn.classList.add('connected'); dot.classList.add('live'); lbl.textContent=name; }
-  if(state==='idle')      { lbl.textContent='Connect ESP32'; }
+// ── BLE UI ─────────────────────────────────────────────────────────
+function setBleUI(state, name = '') {
+  const btn = document.getElementById('bleBtn'), dot = document.getElementById('bleDot'), lbl = document.getElementById('bleLabel');
+  btn.className = 'ble-btn'; dot.className = 'ble-dot';
+  if (state === 'scanning')   { btn.classList.add('scanning');  lbl.textContent = 'Scanning…'; }
+  if (state === 'connecting') { btn.classList.add('scanning');  lbl.textContent = 'Connecting…'; }
+  if (state === 'connected')  { btn.classList.add('connected'); dot.classList.add('live'); lbl.textContent = name; }
+  if (state === 'idle')       { lbl.textContent = 'Connect ESP32'; }
 }
 
-// ── THRESHOLD ─────────────────────────────────────────────────────
-function setThresh(v,el){
-  threshold=v;
-  document.querySelectorAll('.tbtn').forEach(b=>b.classList.remove('active'));
+// ── THRESHOLD ──────────────────────────────────────────────────────
+function setThresh(v, el) {
+  threshold = v;
+  document.querySelectorAll('.tbtn').forEach(b => b.classList.remove('active'));
   el.classList.add('active');
-  document.getElementById('threshVal').textContent=v+'s';
+  document.getElementById('threshVal').textContent = v + 's';
 }
 
-// ── LOG ───────────────────────────────────────────────────────────
-function addLog(type,text,dur){
-  document.getElementById('logEmpty').style.display='none';
-  const item=document.createElement('div');
-  item.className=`log-item ${type==='apnea'?'crit':'inf'}`;
-  const col=type==='apnea'?'#ff3b5c':'#00e5c8';
-  item.innerHTML=`<div class="ldot" style="background:${col}"></div>
+// ── LOG ────────────────────────────────────────────────────────────
+function addLog(type, text, dur) {
+  document.getElementById('logEmpty').style.display = 'none';
+  const item = document.createElement('div');
+  item.className = `log-item ${type === 'apnea' ? 'crit' : 'inf'}`;
+  const col = type === 'apnea' ? '#ff3b5c' : '#00e5c8';
+  item.innerHTML = `<div class="ldot" style="background:${col}"></div>
     <div style="flex:1"><div class="lev">${text}</div><div class="ltm">${new Date().toLocaleTimeString()}</div></div>
-    ${dur?`<div class="ldur">${dur}s</div>`:''}`;
-  const list=document.getElementById('logList');
-  list.insertBefore(item,list.firstChild);
+    ${dur ? `<div class="ldur">${dur}s</div>` : ''}`;
+  const list = document.getElementById('logList');
+  list.insertBefore(item, list.firstChild);
 }
 
-function dismissApnea(){ document.getElementById('apneaBanner').classList.remove('show'); }
-function clearLog(){ document.getElementById('logList').innerHTML='<div class="log-empty" id="logEmpty">No alerts yet</div>'; }
+function dismissApnea() { document.getElementById('apneaBanner').classList.remove('show'); }
+function clearLog() { document.getElementById('logList').innerHTML = '<div class="log-empty" id="logEmpty">No alerts yet</div>'; }
 
-let sessionRunning=false, sessionTimer=null, sessionSecs=0;
-function toggleSession(){
-  const btn=document.getElementById('sessBtn');
-  const dot=document.getElementById('recDot');
-  const status=document.getElementById('sessStatus');
-  const timer=document.getElementById('sessTimer');
+// ── SESSION TOGGLE (manual button) ────────────────────────────────
+function toggleSession() {
+  if (!sessionRunning) {
+    sessionRunning = true;
+    sessionSecs = 0;
+    running = true;
+    sessStart = Date.now();
+    waveBuf = []; bpmHist = []; trendBuf = []; peakBpm = 0;
 
-  if(!sessionRunning){
-    sessionRunning=true; sessionSecs=0;
-    btn.textContent='■ STOP SESSION';
+    const btn = document.getElementById('sessBtn');
+    const dot = document.getElementById('recDot');
+    const status = document.getElementById('sessStatus');
+    const timer = document.getElementById('sessTimer');
+
+    btn.textContent = '■ STOP SESSION';
     btn.classList.add('recording');
     dot.classList.add('live');
-    status.textContent='Recording in progress...';
-    status.style.color='var(--alert)';
-    addLog('inf','Session started',null);
-    running=true; sessStart=Date.now();
-    waveBuf=[]; bpmHist=[]; trendBuf=[]; peakBpm=0;
-    if(simMode && !simIv) startSim();
-    sessionTimer=setInterval(()=>{
-      sessionSecs++;
-      const m=Math.floor(sessionSecs/60), s=sessionSecs%60;
-      timer.textContent=pad(m)+':'+pad(s);
-    },1000);
-  } else {
-    sessionRunning=false;
-    btn.textContent='▶ START SESSION';
-    btn.classList.remove('recording');
-    dot.classList.remove('live');
-    status.textContent='Session stopped · '+document.getElementById('sessTimer').textContent;
-    status.style.color='var(--text2)';
+    status.textContent = 'Recording in progress…';
+    status.style.color = 'var(--alert)';
+    timer.textContent = '00:00';
+
+    addLog('inf', 'Session started', null);
+    if (simMode && !simIv) startSim();
+
     clearInterval(sessionTimer);
-    addLog('inf','Session ended · '+document.getElementById('sessTimer').textContent,null);
-    if(simIv){ clearInterval(simIv); simIv=null; running=false; }
+    sessionTimer = setInterval(() => {
+      sessionSecs++;
+      const m = Math.floor(sessionSecs / 60), s = sessionSecs % 60;
+      timer.textContent = pad(m) + ':' + pad(s);
+      if (bpmHist.length > 0) {
+        trendBuf.push(Math.round(bpmHist[bpmHist.length - 1]));
+        if (trendBuf.length > 50) trendBuf.shift();
+        drawTrend();
+      }
+    }, 1000);
+  } else {
+    stopSession();
   }
 }
 
-function resetDisplay(){
-  document.getElementById('bpmNum').textContent='--';
-  document.getElementById('bpmCard').className='bpm-hero';
-  document.getElementById('spill').className='spill idle';
-  document.getElementById('spillLbl').textContent='Idle';
+function stopSession() {
+  if (!sessionRunning) return;
+  sessionRunning = false;
+  running = false;
+  clearInterval(sessionTimer);
+
+  const timerText = document.getElementById('sessTimer').textContent;
+  const btn = document.getElementById('sessBtn');
+  const dot = document.getElementById('recDot');
+  const status = document.getElementById('sessStatus');
+
+  btn.textContent = '▶ START SESSION';
+  btn.classList.remove('recording');
+  dot.classList.remove('live');
+  status.textContent = 'Session stopped · ' + timerText;
+  status.style.color = 'var(--text2)';
+
+  addLog('inf', 'Session ended · ' + timerText, null);
+
+  if (simIv) { clearInterval(simIv); simIv = null; }
 }
-function pad(n){ return String(n).padStart(2,'0'); }
+
+function resetDisplay() {
+  document.getElementById('bpmNum').textContent = '--';
+  document.getElementById('bpmCard').className = 'bpm-hero';
+  document.getElementById('spill').className = 'spill idle';
+  document.getElementById('spillLbl').textContent = 'Idle';
+}
+
+function pad(n) { return String(n).padStart(2, '0'); }
 </script>
 </body>
 </html>
